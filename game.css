@@ -1,0 +1,109 @@
+/*we start styling choice conatiner**/
+.choice-container{
+    display: flex;
+    width: 100%;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    border: 0.1rem solid rgb(149 84 178);
+    background-color:white; 
+}
+.hidden{
+  display:none;
+}
+/*now we apply hover effect on choice container class**/
+.choice-container:hover{ /*the effects will be same as that of btn class**/
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(66, 18, 85, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+.choice-prefix{
+    background-color:#5c2174;
+    color: white;
+    padding: 1.5rem 2.5rem;
+}
+.choice-text{
+    width:100%; /*we want the choice-text class to take up the entire available width. This is because when we will add JS, we want that if we click anywhere in the choice-text, the choice gets selected. **/
+    padding: 1.5rem; 
+}
+.correct{
+    background-color:rgba(39, 146, 39, 0.822);
+}
+.incorrect{
+    background-color:rgb(235, 93, 93);
+    /* to shake the choice container we use this animation */
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* KEYFRAMES for ANIMATION--------------------- */
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+#hud{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.hud-prefix{
+    font-size: 2rem;
+    text-align:center;
+    margin-bottom: 1rem;
+}
+.hud-main-text{
+    text-align: center;
+    font-size: 2rem;
+    color:#5c2174;
+    margin-bottom: 1rem;
+}
+
+#progressBar{
+  
+  height: 3rem;
+  width: 20rem;
+  border: 0.3rem solid #5c2174;
+}
+#progress-bar-full{
+  height: 2.4rem;
+  width:0%; /*We will update the width dynamically using JavaScript. Initially, the width = 0%*/
+  background-color:#5c2174;
+}
+/* styles for LOADER */
+#loader{
+  border:1.6rem solid white;
+  border-radius: 50%;
+  border-top:1.6rem solid #5c2174;
+  width: 12rem;
+  height: 12rem;
+  box-shadow:  0rem 0 0.4rem black, 0em 0 0.4em black;
+  animation: spin 2s linear infinite; /* we will include the spin animation which will have a 2 second animation speed*/
+  /*the animation will be linear ie the loader will rotate with a constant speed throughout, it won't have a non-uniform speed*
+  /*the animation will loop infinitely*/
+}
+
+/* we will add animation to spin the loader */
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

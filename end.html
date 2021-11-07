@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>End Page</title>
+</head>
+<body>
+    <div class="container">
+        <div id="end" class="flex-center flex-column">
+            <h1 id ="finalScore">HI</h1>
+            <!-- here we make a form for the user to enter his name and save his high score in it -->
+            <form>
+                <input 
+                    type="text" 
+                    name = "username" 
+                    id = "username" 
+                    placeholder="username"
+                />
+                <!-- we will add a button for saving score and when this button is clicked, saveHighScore() and we pass event as parameter to it  -->
+                <button 
+                 type = "submit" 
+                 id = "saveScoreBtn" 
+                 class = "btn" 
+                 onclick="saveHighScore(event)"
+                 disabled>Save Your Score</button>    
+                 <!--we set the button to disabled by default so as to avoid the user to click it immediately on reaching the end page-->    
+            </form>
+           <!-- now we add two anchor tags as buttons so as to go to home page or play again -->
+           <a href="index.html" class = "btn">Go Back To Home</a>
+           <a href="game.html"class = "btn">Play Again</a> 
+            
+        </div>
+    </div>
+    <script src="end.js"></script>
+</body>
+</html>

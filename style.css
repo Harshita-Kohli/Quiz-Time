@@ -1,0 +1,113 @@
+:root{ /* we apply this to the entire html page**/
+background-color: rgb(218 201 240);
+font-size: 62.5%; /*62.5% means 10px. We will be using rem as unit in this website. rem calculates font size relative to the size of root **/
+}
+
+*{
+box-sizing: border-box; /*we apply this so that any padding and margin is included in the size of all the box**/
+margin: 0;
+padding: 0;
+}
+
+/*we apply margin-bottom on h1, h2,h3 and h4**/
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 1rem;
+}
+/* styling the h1 */
+h1{
+    font-size: 5.4rem;/*the font size will be 54px because 5.4rem  = 5.4*10 px = 54px**/
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 > span {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+/* styling the h2 */
+h2{
+ font-size: 3rem; /* the font size will be 42 px because 4.2rem = 4.2*10 px = 42px**/
+ font-weight: 500;
+}
+/* styling the h3 */
+h3{
+ font-size: 2.8rem;/*the font size will be 28px**/
+ font-weight: 500;
+}
+
+/* UTILITY CLASSES: */
+.container{ /*container class is the outermost class. We want to center the entire stuff, provide padding etc**/
+ width:100vw;
+ height:100vh;
+ display:flex;
+ justify-content: center; /*to center items horizontally**/
+ align-items:center;/*to center the items vertically**/
+ max-width: 80rem; /*it takes maximum width of 800px, but then the container class does not come in center**/
+ margin: 0 auto;/*so we apply margin: 0 auto to center the container class. This will make sure that as the screen gets wider, there will be some padding, but on smaller screen, the class will take up 800px space**/
+ padding: 2rem; /*we give a 20px padding on all four sides of container**/
+}
+.flex-column{
+    display:flex;
+    flex-direction:column;
+}
+.flex-center{
+ justify-content: center;
+ align-items: center;
+}
+
+.justify-center{
+  justify-content:center;
+}
+.text-center{
+    text-align: center;
+}
+.hide{
+    display:none;
+}
+/*Button class **/
+.btn {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #0e2f4d;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #0e2f4d;
+    background-color: white;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(66, 18, 85, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+  
+  .btn[disabled]:hover { /*when button is diasbled, we apply this class**/
+    cursor: not-allowed; /*we disable the cursor**/
+    box-shadow: none;/*we remove box shadow**/
+    transform: none;/*no transform property is applied**/
+  }
+
+  /* form */
+  form{
+    width:100%;
+    display:flex;
+    flex-direction:column; /*to stack everything on top of each other*/
+    align-items:center;
+  }
+  input{
+    width: 20rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-size:1.8rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0 rgba(66, 18, 85, 0.5);
+  }
+  input::placeholder{
+    color:#aaa;
+  }
