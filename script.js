@@ -124,7 +124,7 @@ getNewQuestion = () =>{ //this function is called for generating new questions o
         //save the highest score in the local storage. We give key as mostRecentScore and value as score
         localStorage.setItem('mostRecentScore',score);
         //go to the end page 
-        return window.location.assign('/end.html');
+        return window.location.assign('./end.html');
     } 
     questionCount++;//first thing that we'll do is to increment the question count
     // questionCountText.innerText = questionCount +'/'+ maxQuestions;//we also wanna update the count in the DOM as : 1/3 or 2/3 etc
